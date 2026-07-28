@@ -5,7 +5,8 @@
         MathQuizApp App = new MathQuizApp(new UserGameInteract(),
                                           new HandleUserChoice(
                                             new QuestionGenerator(), 
-                                            new HandleGame()));
+                                            new HandleGame(
+                                                new ScoreHandler())));
         App.Run();
     }
 }

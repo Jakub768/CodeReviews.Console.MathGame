@@ -4,6 +4,12 @@ using System.Formats.Asn1;
 public class HandleGame
 {
     private const int QUESTION_AMOUNT = 5;
+    private IScoreManager _scoreHandler;
+
+    public HandleGame(IScoreManager scoreHandler)
+    {
+        _scoreHandler = scoreHandler;
+    }
     public void Play(List<BaseOperation> questions)
     {
         int rounds = 0;
@@ -20,12 +26,16 @@ public class HandleGame
             if (answer == questions[rounds].result)
             {
                 Console.WriteLine("correct you get a point!");
+                _scoreHandler.score++;
             }
             else
             {
                 Console.WriteLine("Incorrect, you do not get a point.");
             }
 
+            rounds++;
         }
+
+        Console.WriteLine($"That's the end of the game! you scored: {_scoreHandler.score}");
     }
 }
