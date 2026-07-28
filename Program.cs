@@ -2,7 +2,7 @@
 {
     public static void Main(String[] args)
     {
-        UserGameInteract user = new UserGameInteract();
-        user.PromptMenu();
+        handleGame n = new handleGame();
+        n.generatenums();
     }
 }

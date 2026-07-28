@@ -8,6 +8,9 @@ public class UserGameInteract
         {
             Console.WriteLine($"{i}: {Enum.GetName(typeof(Menu), i)}");
         }
+
+        int menuChoice = int.Parse(Console.ReadLine());
+        return (Menu)menuChoice;
     }
 
     public Operation PromptOperation()
@@ -18,6 +21,9 @@ public class UserGameInteract
         {
             Console.WriteLine($"{i}: {Enum.GetName(typeof(Operation), i)}");
         }
+
+        int operationChoice = int.Parse(Console.ReadLine());
+        return (Operation)operationChoice;
     }
 
 
