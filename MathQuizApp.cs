@@ -1,10 +1,12 @@
 public class MathQuizApp
 {
     public UserGameInteract _interact;
+    public HandleUserChoice _choiceHandler;
 
-    public MathQuizApp(UserGameInteract interact)
+    public MathQuizApp(UserGameInteract interact, HandleUserChoice choiceHandler)
     {
         _interact = interact;
+        _choiceHandler = choiceHandler;
     }
 
     public void Run()
@@ -21,6 +23,7 @@ public class MathQuizApp
                 break;
             case Menu.Play: 
                 chosenOp = interact.PromptOperation();
+                _choiceHandler.initGame(chosenOp);
                 break;
             case Menu.Exit:
                 Environment.Exit(1);
