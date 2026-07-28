@@ -1,8 +1,12 @@
 public class GameHistory
 {
+    public static List<BaseOperation>? savedQuestions { get; set; }
 
-    public List<BaseOperation> getGameHistory()
+    public void SaveQuestions(List<BaseOperation> Questions)
     {
-        return null;
+        foreach (var q in Questions)
+        {
+            savedQuestions?.Add(q);
+        }
     }
 }

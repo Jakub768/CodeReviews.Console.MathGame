@@ -1,5 +1,11 @@
 public class QuestionGenerator
 {
+    private GameHistory _questionHistory;
+
+    public QuestionGenerator(GameHistory questionHistory)
+    {
+        _questionHistory = questionHistory;
+    }
     private static readonly Dictionary<Operation, Func<BaseOperation>> operation = new Dictionary<Operation, Func<BaseOperation>>()
     {
         [Operation.Addition] = () => new AdditionOperation(),
@@ -19,6 +25,8 @@ public class QuestionGenerator
         {
             questions.Add(createOperation());
         }
+
+        _questionHistory.SaveQuestions(questions);
 
         return questions;
     }

@@ -12,20 +12,24 @@ public class MathQuizApp
     public void Run()
     {
         Operation chosenOp;
+        bool endApp = false;
 
-        Menu m = _interact.PromptMenu();
-        switch (m)
+        while (!endApp)
         {
-            case Menu.History:
-                Console.WriteLine("no");
-                break;
-            case Menu.Play: 
-                chosenOp = _interact.PromptOperation();
-                _choiceHandler.initGame(chosenOp);
-                break;
-            case Menu.Exit:
-                Environment.Exit(1);
-                break;
+            Menu m = _interact.PromptMenu();
+            switch (m)
+            {
+                case Menu.History:
+                    Console.WriteLine("no");
+                    break;
+                case Menu.Play: 
+                    chosenOp = _interact.PromptOperation();
+                    _choiceHandler.initGame(chosenOp);
+                    break;
+                case Menu.Exit:
+                    endApp = true;
+                    break;
+            }
         }
     }
 }

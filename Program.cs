@@ -4,7 +4,8 @@
     {
         MathQuizApp App = new MathQuizApp(new UserGameInteract(),
                                           new HandleUserChoice(
-                                            new QuestionGenerator(), 
+                                            new QuestionGenerator(
+                                                new GameHistory()), 
                                             new HandleGame(
                                                 new ScoreHandler())));
         App.Run();
