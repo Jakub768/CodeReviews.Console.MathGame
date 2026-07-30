@@ -20,7 +20,7 @@ public class MathQuizApp
             switch (m)
             {
                 case Menu.History:
-                    Console.WriteLine("no");
+                    _choiceHandler.displayHistory();
                     break;
                 case Menu.Play: 
                     chosenOp = _interact.PromptOperation();

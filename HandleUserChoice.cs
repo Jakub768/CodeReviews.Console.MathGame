@@ -2,15 +2,17 @@ public class HandleUserChoice
 {
     QuestionGenerator _questionGenerator;
     HandleGame _gameHandler;
+    IGameHistory _gameHistory;
 
-    public HandleUserChoice(QuestionGenerator questionGenerator, HandleGame gameHandler)
+    public HandleUserChoice(QuestionGenerator questionGenerator, HandleGame gameHandler, IGameHistory gamehistory)
     {
         _questionGenerator = questionGenerator;
         _gameHandler = gameHandler;
+        _gameHistory = gamehistory;
     }
     public void displayHistory()
     {
-        // display history of games from class GameHistory
+        Console.WriteLine(_gameHistory.ToString());
     }
 
     public void initGame(Operation op)

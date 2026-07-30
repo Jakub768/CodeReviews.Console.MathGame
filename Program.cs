@@ -2,12 +2,16 @@
 {
     public static void Main(String[] args)
     {
+
+        IGameHistory gameHistory = new GameHistory();
+        
         MathQuizApp App = new MathQuizApp(new UserGameInteract(),
                                           new HandleUserChoice(
                                             new QuestionGenerator(
-                                                new GameHistory()), 
+                                                gameHistory), 
                                             new HandleGame(
-                                                new ScoreHandler())));
+                                                new ScoreHandler()),
+                                            gameHistory));
         App.Run();
     }
 }

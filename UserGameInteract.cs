@@ -9,6 +9,7 @@ public class UserGameInteract
             Console.WriteLine($"{i}: {Enum.GetName(typeof(Menu), i)}");
         }
 
+
         int menuChoice = int.Parse(Console.ReadLine());
         return (Menu)menuChoice;
     }

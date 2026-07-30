@@ -1,8 +1,8 @@
 public class QuestionGenerator
 {
-    private GameHistory _questionHistory;
+    private IGameHistory _questionHistory;
 
-    public QuestionGenerator(GameHistory questionHistory)
+    public QuestionGenerator(IGameHistory questionHistory)
     {
         _questionHistory = questionHistory;
     }
